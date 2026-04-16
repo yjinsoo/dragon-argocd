@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deploy-test
+  labels:
+    app: nginx-deploy-test
+  # replace with namespace where provisioner is deployed
+  namespace: default
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: harbor-test
+  template:
+    metadata:
+      labels:
+        app: harbor-test
+    spec:
+      containers:
+        - name: nginx
+          image: harbor.test.com/test-project/nginx-test:latest
+      imagePullSecrets:
+        - name: harbor-secret
+
