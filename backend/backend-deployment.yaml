@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: receipt-backend
+  labels:
+    app: receipt-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: receipt-backend
+  template:
+    metadata:
+      labels:
+        app: receipt-backend
+    spec:
+      containers:
+      - name: flask-app
+        image: <YOUR_HARBOR_URL>/receipt-backend:latest # 빌드 후 푸시한 이미지 주소
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "200m"
+            memory: "256Mi"
