@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: flask-app
-        image: harbor.test.com/test-project/python-test:26 # 빌드 후 푸시한 이미지 주소
+        image: harbor.test.com/test-project/python-test:1
         ports:
         - containerPort: 5000
         resources:
