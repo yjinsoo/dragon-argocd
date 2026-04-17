@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: harbor.test.com/test-project/nginx-test:20
+          image: harbor.test.com/test-project/nginx-test:21
       imagePullSecrets:
         - name: harbor-secret
 
