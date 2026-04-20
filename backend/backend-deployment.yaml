@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: flask-app
-        image: harbor.test.com/test-project/python-test:11
+        image: harbor.test.com/test-project/python-test:12
         ports:
         - containerPort: 5000
         resources:
