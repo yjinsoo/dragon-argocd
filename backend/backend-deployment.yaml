@@ -19,14 +19,11 @@ spec:
       - name: flask-app
         image: harbor.test.com/test-project/python-test:184
         env:
-        - name: SQLALCHEMY_DATABASE_URL
-          value: "sqlite:////db/my_user_db.db"
         - name: SECRET_KEY
           value: "my_super_secret_key_dont_share_it"
-        - name: ALGORITHM 
-          value: "HS256"
-        - name: ACCESS_TOKEN_EXPIRE_MINUTES 
-          value: "30"
+        envFrom:
+          - configMapRef:
+              name: python-config
         ports:
         - containerPort: 5000
         resources:
