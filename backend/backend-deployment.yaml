@@ -25,8 +25,8 @@ spec:
         - name: SECRET_KEY
           valueFrom:
             secretKeyRef:
-              name: python-secret
-              key: password
+              name: python-secret-key
+              key: SECRET_KEY
         ports:
         - containerPort: 5000
         resources:
