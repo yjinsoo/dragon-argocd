@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: flask-app
-        image: harbor.test.com/test-project/python-test:183
+        image: harbor.test.com/test-project/python-test:184
         env:
         - name: SQLALCHEMY_DATABASE_URL
           value: "sqlite:////db/my_user_db.db"
